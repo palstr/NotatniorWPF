@@ -1,0 +1,21 @@
+﻿<Window x:Class="NotatniorWPF.WindowKolor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotatniorWPF"
+        mc:Ignorable="d"
+        Title="Kolor" Height="150" Width="200">
+    <UniformGrid Columns="2">
+        <Label>R</Label>
+        <TextBox x:Name="rTextBox"></TextBox>
+        <Label>G</Label>
+        <TextBox x:Name="gTextBox"></TextBox>
+        <Label>B</Label>
+        <TextBox x:Name="bTextBox"></TextBox>
+
+        <Label></Label>
+        <Button Click="Button_ClickZatwierdz">Zatwierdź kolor</Button>
+        
+    </UniformGrid>
+</Window>
