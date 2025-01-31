@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:NotatniorWPF"
         mc:Ignorable="d"
         Title="Notatnik" Height="450" Width="800">
-    <DockPanel>
+  <DockPanel>
 
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Plik">
@@ -22,51 +22,56 @@
                 <Separator/>
                 <MenuItem Header="Zamknij"
                           Click="MenuItem_Click_Zamknij"/>
+                <MenuItem Header="Zawijanie wierszy"
+                          IsCheckable="True"
+                          IsChecked="True"
+                          Checked="MenuItem_Zawijaj"
+                          Unchecked="MenuItem_NieZawijaj"/>
             </MenuItem>
-            <MenuItem Header="Format">
-                <MenuItem Header="Kolor czcionki">
-                    <MenuItem 
+                <MenuItem Header="Format">
+                    <MenuItem Header="Kolor czcionki">
+                        <MenuItem 
                           Header="Dzień/Noc"  
                           IsCheckable="True"
                           IsChecked="True" 
                           Checked="DzienNoc_Zaznacz" 
                           Unchecked="DzienNoc_Odznacz" >
-                    </MenuItem>
-                    <MenuItem Header="Czerwona"
+                        </MenuItem>
+                        <MenuItem Header="Czerwona"
                               Click="MenuItem_Click_Czerwona"
                               />
-                    <MenuItem Header="Dowolna"
+                        <MenuItem Header="Dowolna"
                               Click="MenuItem_ClickDowolnyKolor"/>
-                </MenuItem>
-                <MenuItem Header="Rozmiar czcionki"
+                    </MenuItem>
+                    <MenuItem Header="Rozmiar czcionki"
                           Click="MenuItem_ClickRozmiar">
 
+                    </MenuItem>
+
+                </MenuItem>
+                <MenuItem
+                Header="Ed_ycja">
+                    <MenuItem Header="Kopiuj" Command="ApplicationCommands.Copy"/>
+                    <MenuItem Header="Wytnij" Command="ApplicationCommands.Cut"/>
+                    <MenuItem Header="Wklej" Command="ApplicationCommands.Paste"/>
+                    <MenuItem Header="Cofnij" Command="ApplicationCommands.Undo"/>
+
                 </MenuItem>
 
-            </MenuItem>
-            <MenuItem
-                Header="Ed_ycja">
-                <MenuItem Header="Kopiuj" Command="ApplicationCommands.Copy"/>
-                <MenuItem Header="Wytnij" Command="ApplicationCommands.Cut"/>
-                <MenuItem Header="Wklej" Command="ApplicationCommands.Paste"/>
-                <MenuItem Header="Cofnij" Command="ApplicationCommands.Undo"/>
-
-            </MenuItem>
-           
-            <MenuItem>
-                <MenuItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Ellipse
+                <MenuItem>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse
                             Width="10"
                             Height="10"
                             Fill="Orange"/>
-                        <Label>Informacje</Label>
-                    </StackPanel>
-                </MenuItem.Header>
-                <MenuItem Header="O autorze" Click="MenuItem_ClickAutor"/>
-                <MenuItem Header="O aplikacji" Click="MenuItem_ClickAppka"/>
+                            <Label>Informacje</Label>
+                        </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem Header="O autorze" Click="MenuItem_ClickAutor"/>
+                    <MenuItem Header="O aplikacji" Click="MenuItem_ClickAppka"/>
 
-            </MenuItem>
+                </MenuItem>
         </Menu>
 
         <TextBox 
