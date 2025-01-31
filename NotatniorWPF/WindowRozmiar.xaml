@@ -6,22 +6,24 @@
         xmlns:local="clr-namespace:NotatniorWPF"
         mc:Ignorable="d"
         Title="WindowRozmiar" Height="150" Width="300">
-    <UniformGrid Columns="2">
-        <Label>Rozmiar</Label>
-        <ListView
-            ItemsSource="{Binding rozmiaryCzcionek}"
-            ></ListView>
-        
-        <Label>Styl</Label>
-        <ComboBox x:Name="stylComboBox"
-                  SelectedIndex="2">
+ <UniformGrid Columns="2">
+        <Label
+            FontStyle="Italic"
+            >Styl czcionki</Label>
+        <ComboBox x:Name="stylCombobox" SelectedIndex="2">
             <ComboBoxItem>Pochylona</ComboBoxItem>
             <ComboBoxItem>Pogrubiona</ComboBoxItem>
             <ComboBoxItem>Normalna</ComboBoxItem>
-            <ComboBoxItem>Pochylona i Pogrubiona</ComboBoxItem>
+            <ComboBoxItem>Pochylona i pogrubiona</ComboBoxItem>
         </ComboBox>
-        
-        <TextBox x:Name="podgladTextBox"></TextBox>
-        <Button Click="Button_Click">OK</Button>
+        <Label>Rozmiar czcionki</Label>
+        <ListView x:Name="listVju"
+            ItemsSource="{Binding rozmiaryCzcionek}"
+            SelectedValue="{Binding Rozmiar}"
+            ></ListView>
+        <TextBlock x:Name="podgladTextBlock">
+            Tekst
+        </TextBlock>
+        <Button Click="Button_Click_Zatwierdz">Zatwierdź</Button>
     </UniformGrid>
 </Window>
