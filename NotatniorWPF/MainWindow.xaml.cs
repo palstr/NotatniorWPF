@@ -176,6 +176,26 @@ namespace NotatniorWPF
         {
             WindowRozmiar windowRozmiar = new WindowRozmiar();
             windowRozmiar.ShowDialog();
+            wpisaneTextBox.FontSize = windowRozmiar.Rozmiar;
+            wpisaneTextBox.FontStyle = windowRozmiar.Styl1;
+            wpisaneTextBox.FontWeight = windowRozmiar.Styl2;
+        }
+
+        private void MenuItem_Zawijaj(object sender, RoutedEventArgs e)
+        {
+            if(wpisaneTextBox != null)
+            {
+                wpisaneTextBox.TextWrapping = TextWrapping.Wrap;
+            }
+
+        }
+
+        private void MenuItem_NieZawijaj(object sender, RoutedEventArgs e)
+        {
+            if (wpisaneTextBox != null)
+            {
+                wpisaneTextBox.TextWrapping = TextWrapping.NoWrap;
+            }
         }
     }
 }
